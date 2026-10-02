@@ -4,18 +4,62 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Магазин</title>
+  <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-  <header>
-    
-  </header>
+  <div class="container">
+    <header class="header">
+      <div class="header__brand">
+        <img src="static/book-logo.svg" alt="Book Shop logo" width="48" height="48">
+        <div>
+          <h1 class="header__title">Book Shop</h1>
+          <p class="header__subtitle">The best book shop ever!</p>
+        </div>
+      </div>
+      <button class="header__cart" type="button">
+        <img src="static/cart.svg" alt="Корзина" width="24" height="24">
+        <span>Сделать заказ</span>
+      </button>
+    </header>
 
   <main>
-
+    <!-- Just mock yet -->
+    <section class="catalog">
+      <h2 class="catalog__title">Книги</h2>
+      <div class="catalog__grid">
+        <article class="product-card">
+          <div class="product-card__cover"></div>
+          <h3 class="product-card__title">Мастер и Маргарита</h3>
+          <p class="product-card__author">Михаил Булгаков</p>
+          <p class="product-card__price">800 ₽</p>
+          <button class="product-card__button" type="button">Добавить в корзину</button>
+        </article>
+        <article class="product-card">
+          <div class="product-card__cover"></div>
+          <h3 class="product-card__title">Преступление и наказание</h3>
+          <p class="product-card__author">Фёдор Достоевский</p>
+          <p class="product-card__price">700 ₽</p>
+          <button class="product-card__button" type="button">Добавить в корзину</button>
+        </article>
+        <article class="product-card">
+          <div class="product-card__cover"></div>
+          <h3 class="product-card__title">Война и мир</h3>
+          <p class="product-card__author">Лев Толстой</p>
+          <p class="product-card__price">1200 ₽</p>
+          <button class="product-card__button" type="button">Добавить в корзину</button>
+        </article>
+        <article class="product-card">
+          <div class="product-card__cover"></div>
+          <h3 class="product-card__title">Тихий Дон</h3>
+          <p class="product-card__author">Михаил Шолохов</p>
+          <p class="product-card__price">950 ₽</p>
+          <button class="product-card__button" type="button">Добавить в корзину</button>
+        </article>
+      </div>
+    </section>
+    
   </main>
 
-  <footer>
-
-  </footer>
+  </div>
 </body>
 </html>
