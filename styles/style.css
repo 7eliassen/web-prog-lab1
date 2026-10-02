@@ -32,6 +32,26 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  height: 50px;
+}
+
+/* For phones and tablets */
+@media (max-width: 425px) {
+  .header {
+    flex-wrap: wrap;
+    gap: 12px;
+    
+  }
+
+  .header__brand {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .header__cart {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 .catalog {
