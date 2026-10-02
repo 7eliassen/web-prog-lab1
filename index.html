@@ -16,7 +16,7 @@
           <p class="header__subtitle">The best book shop ever!</p>
         </div>
       </div>
-      <button class="header__cart" type="button">
+      <button class="header__cart" type="button" id="open-order">
         <img src="static/cart.svg" alt="Корзина" width="24" height="24">
         <span>Сделать заказ</span>
       </button>
@@ -60,6 +60,30 @@
     
   </main>
 
+    <dialog class="order" id="order-modal">
+      <h2 class="order__title" id="order-title">Оформление заказа</h2>
+      <form class="order-form" action="#" method="post">
+        <label class="order-form__field">
+          <span class="order-form__label">Имя</span>
+          <input class="order-form__input" type="text" name="firstName" required>
+        </label>
+        <label class="order-form__field">
+          <span class="order-form__label">Фамилия</span>
+          <input class="order-form__input" type="text" name="lastName" required>
+        </label>
+        <label class="order-form__field">
+          <span class="order-form__label">Адрес доставки</span>
+          <input class="order-form__input" type="text" name="address" required>
+        </label>
+        <label class="order-form__field">
+          <span class="order-form__label">Контактный номер телефона</span>
+          <input class="order-form__input" type="tel" name="phone" required>
+        </label>
+        <button class="order-form__submit" type="submit">Создать заказ</button>
+      </form>
+    </dialog>
   </div>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
