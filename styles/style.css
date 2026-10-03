@@ -109,6 +109,30 @@ body {
   margin: 0;
 }
 
+.product-card__controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.product-card__quantity-button {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--ink);
+  border-radius: 10px;
+  background: var(--forest);
+  color: var(--paper);
+  font: inherit;
+  cursor: pointer;
+}
+
+.product-card__quantity {
+  min-width: 24px;
+  text-align: center;
+  font-weight: 700;
+}
+
 .order {
   padding: 24px;
   border: none;

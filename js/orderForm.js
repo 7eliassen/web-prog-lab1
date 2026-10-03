@@ -10,12 +10,12 @@ const renderOrder = () => {
   orderList.innerHTML = '';
   let total = 0;
 
-  selectedBooks.forEach((id) => {
-    const book = books.find((item) => item.id === id);
-    total += book.price;
+  Object.entries(selectedBooks).forEach(([id, quantity]) => {
+    const book = books.find((item) => item.id === Number(id));
+    total += book.price * quantity;
 
     const item = document.createElement('li');
-    item.textContent = `${book.title} — ${book.price} ₽`;
+    item.textContent = `${book.title} — ${quantity} шт. × ${book.price} ₽`;
     orderList.append(item);
   });
 
@@ -23,7 +23,7 @@ const renderOrder = () => {
 };
 
 const updateSubmitState = () => {
-  orderSubmitButton.disabled = !orderForm.checkValidity() || selectedBooks.length === 0;
+  orderSubmitButton.disabled = !orderForm.checkValidity() || Object.keys(selectedBooks).length === 0;
 };
 
 orderForm.addEventListener('input', updateSubmitState);
@@ -51,12 +51,14 @@ orderModal.addEventListener('click', (e) => {
 orderSubmitButton.addEventListener('click', (e) => {
   e.preventDefault();
 
-  selectedBooks = [];
+  selectedBooks = {};
   localStorage.setItem('selected-books', JSON.stringify(selectedBooks));
 
-  document.querySelectorAll('.product-card__button').forEach((button) => {
-    button.textContent = 'Добавить в корзину';
+  document.querySelectorAll('.product-card__quantity').forEach((quantity) => {
+    quantity.textContent = '0';
   });
 
+  orderList.innerHTML = '';
+  orderTotal.textContent = '0';
   orderSuccess.hidden = false;
 });
