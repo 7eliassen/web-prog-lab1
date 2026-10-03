@@ -36,7 +36,7 @@
       <h2 class="order__title" id="order-title">Оформление заказа</h2>
       <ul class="order__list" id="order-list"></ul>
       <p class="order__total">Итого: <span id="order-total">0</span> ₽</p>
-      <form class="order-form" action="#" method="post">
+      <form class="order-form" id="order-form" action="#" method="post">
         <label class="order-form__field">
           <span class="order-form__label">Имя</span>
           <input class="order-form__input" type="text" name="firstName" required>
@@ -53,8 +53,9 @@
           <span class="order-form__label">Контактный номер телефона</span>
           <input class="order-form__input" type="tel" name="phone" required>
         </label>
-        <button class="order-form__submit" id="order-submit" type="submit">Создать заказ</button>
+        <button class="order-form__submit" id="order-submit" type="submit" disabled>Создать заказ</button>
       </form>
+      <p class="order__success" id="order-success" hidden>Заказ создан!</p>
     </dialog>
   </div>
 

@@ -2,9 +2,11 @@ const openOrderButton = document.getElementById('open-order');
 const orderModal = document.getElementById('order-modal');
 const orderList = document.getElementById('order-list');
 const orderTotal = document.getElementById('order-total');
+const orderForm = document.getElementById('order-form');
 const orderSubmitButton = document.getElementById('order-submit');
+const orderSuccess = document.getElementById('order-success');
 
-openOrderButton.addEventListener('click', () => {
+const renderOrder = () => {
   orderList.innerHTML = '';
   let total = 0;
 
@@ -18,6 +20,18 @@ openOrderButton.addEventListener('click', () => {
   });
 
   orderTotal.textContent = total;
+};
+
+const updateSubmitState = () => {
+  orderSubmitButton.disabled = !orderForm.checkValidity() || selectedBooks.length === 0;
+};
+
+orderForm.addEventListener('input', updateSubmitState);
+
+openOrderButton.addEventListener('click', () => {
+  orderSuccess.hidden = true;
+  renderOrder();
+  updateSubmitState();
   orderModal.showModal();
 });
 
@@ -34,6 +48,15 @@ orderModal.addEventListener('click', (e) => {
   }
 });
 
-orderSubmitButton.addEventListener('click', () => {
-  console.log('test');
+orderSubmitButton.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  selectedBooks = [];
+  localStorage.setItem('selected-books', JSON.stringify(selectedBooks));
+
+  document.querySelectorAll('.product-card__button').forEach((button) => {
+    button.textContent = 'Добавить в корзину';
+  });
+
+  orderSuccess.hidden = false;
 });
