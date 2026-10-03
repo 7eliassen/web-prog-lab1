@@ -34,6 +34,8 @@
 
     <dialog class="order" id="order-modal">
       <h2 class="order__title" id="order-title">Оформление заказа</h2>
+      <ul class="order__list" id="order-list"></ul>
+      <p class="order__total">Итого: <span id="order-total">0</span> ₽</p>
       <form class="order-form" action="#" method="post">
         <label class="order-form__field">
           <span class="order-form__label">Имя</span>
@@ -51,11 +53,12 @@
           <span class="order-form__label">Контактный номер телефона</span>
           <input class="order-form__input" type="tel" name="phone" required>
         </label>
-        <button class="order-form__submit" type="submit">Создать заказ</button>
+        <button class="order-form__submit" id="order-submit" type="submit">Создать заказ</button>
       </form>
     </dialog>
   </div>
 
+  <!-- The order is important. Some variables are defined in books.js and used in orderForm.js  -->
   <script src="js/books.js"></script>
   <script src="js/orderForm.js"></script>
 </body>
