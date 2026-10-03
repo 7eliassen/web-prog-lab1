@@ -38,23 +38,33 @@ const books = [
   }
 ];
 
+let selectedBooks = JSON.parse(localStorage.getItem('selected-books')) || [];
+
 const catalogGrid = document.querySelector('.catalog__grid');
 
 books.forEach((book) => {
   const card = document.createElement('article');
   card.className = 'product-card';
+  card.id = `product-card-${book.id}`
   card.innerHTML = `
     <img class="product-card__cover" src="${book.cover}" alt="${book.title}">
     <h3 class="product-card__title">${book.title}</h3>
     <p class="product-card__author">${book.author}</p>
     <p class="product-card__price">${book.price} ₽</p>
-    <button class="product-card__button" type="button">Добавить в корзину</button>
+    <button class="product-card__button" type="button">${selectedBooks.includes(book.id) ? "Удалить из корзины" : "Добавить в корзину"}</button>
   `;
   catalogGrid.append(card);
 
   const button = card.querySelector('.product-card__button');
   button.addEventListener('click', () => {
-    console.log(book);
+    if (selectedBooks.includes(book.id)) {
+      selectedBooks = selectedBooks.filter((id) => id !== book.id);
+      button.textContent = "Добавить в корзину";
+    } else {
+      selectedBooks.push(book.id);
+      button.textContent = "Удалить из корзину";
+    }
+    localStorage.setItem('selected-books', JSON.stringify(selectedBooks));
   });
 });
 
