@@ -176,6 +176,10 @@ body {
   border-radius: 12px;
 }
 
+.order-form__submit:hover {
+  cursor: pointer;
+}
+
 .order__success {
   color: var(--ink);
 }
