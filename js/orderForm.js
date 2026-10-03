@@ -58,7 +58,5 @@ orderSubmitButton.addEventListener('click', (e) => {
     quantity.textContent = '0';
   });
 
-  orderList.innerHTML = '';
-  orderTotal.textContent = '0';
   orderSuccess.hidden = false;
 });
