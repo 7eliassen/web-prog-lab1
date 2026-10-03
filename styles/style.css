@@ -47,10 +47,14 @@ body {
   gap: 8px;
   min-height: 50px;
   padding: 12px 20px;
-  background: var(--forest);
-  color: var(--paper);
+  background: var(--paper);
+  color: var(--ink);
   border: 1px solid var(--ink);
   border-radius: 12px;
+}
+
+.header__cart:hover {
+  cursor: pointer;
 }
 
 /* For phones and tablets */
