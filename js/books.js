@@ -35,6 +35,27 @@ const books = [
     author: 'Джордж Оруэлл',
     price: 650,
     cover: 'static/covers/1984.jpg'
+  },
+  {
+    id: 6,
+    title: 'Мы',
+    author: 'Евгений Замятин',
+    price: 600,
+    cover: 'static/covers/zamyatin_mu.jpg'
+  },
+  {
+    id: 7,
+    title: 'Ревизор',
+    author: 'Николай Гоголь',
+    price: 550,
+    cover: 'static/covers/revizor.jpg'
+  },
+  {
+    id: 8,
+    title: 'Горе от ума',
+    author: 'Александр Грибоедов',
+    price: 500,
+    cover: 'static/covers/gore-ot-uma.jpg'
   }
 ];
 
